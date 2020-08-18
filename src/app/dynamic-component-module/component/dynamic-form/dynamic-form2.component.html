@@ -1,0 +1,8 @@
+<ng-container *ngFor="let g of group">
+  <div class="row">
+    <ng-container *ngFor="let control of g">
+      <app-dynamic-control [form]="form" [control]="control" [ngClass]="control.bootstrapCol" (dropdownchange)="onDropdownChange($event)"
+                                     (radioboxchange)="onRadioBoxChange($event)"></app-dynamic-control>
+    </ng-container>
+  </div> 
+</ng-container>

@@ -1,0 +1,33 @@
+<ng-container *ngIf="control.controlType === 'textbox'">
+  <mat-form-field [formGroup]="form">  
+    <mat-label>{{ control.label }}</mat-label>
+    <input matInput [formControlName]="control.key" [id]="control.key" [type]="control.type">
+  </mat-form-field>
+</ng-container>
+
+<ng-container *ngIf="control.controlType === 'checkbox'">
+  <div [formGroup]="form">
+    <mat-checkbox [formControlName]="control.key" [id]="control.key">{{ control.label }}</mat-checkbox>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="control.controlType === 'dropdown'">
+  <mat-form-field [formGroup]="form">  
+    <mat-label>{{ control.label }}</mat-label>
+    <mat-select [formControlName]="control.key" [id]="control.key" (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let opt of control.options" [value]="opt.key">
+        {{ opt.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>
+
+<ng-container *ngIf="control.controlType === 'radiobox'">
+  <div [formGroup]="form">
+    <mat-radio-group [formControlName]="control.key" [id]="control.key" (change)="onRedioBoxChange($event)">
+      <mat-radio-button *ngFor="let opt of control.options" [value]="opt.key">
+        {{ opt.value }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</ng-container>

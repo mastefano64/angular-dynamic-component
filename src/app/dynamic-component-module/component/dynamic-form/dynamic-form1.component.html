@@ -1,0 +1,4 @@
+<ng-container *ngFor="let control of controls">
+  <app-dynamic-control [form]="form" [control]="control" (dropdownchange)="onDropdownChange($event)"
+                (radioboxchange)="onRadioBoxChange($event)"></app-dynamic-control>
+</ng-container>

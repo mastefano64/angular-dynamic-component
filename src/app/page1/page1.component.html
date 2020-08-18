@@ -1,0 +1,15 @@
+<div>
+  <h1>{{ title }}</h1>
+</div>
+
+<div>
+  <form class="form-container-with-row" [formGroup]="form" (ngSubmit)="onSubmit()">  
+
+    <app-dynamic-form1 [form]="form" [controls]="controls" (dropdownchange)="onDropdownChange($event)"
+                    (radioboxchange)="onRadioBoxChange($event)"></app-dynamic-form1>
+
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Salva</button>
+    </div>
+  </form>
+</div>
