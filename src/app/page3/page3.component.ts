@@ -17,6 +17,7 @@ export class Page3Component implements OnInit {
   form = new FormGroup({});
   controls: IControlFieldMetadata[] = [];
   title = 'Page 3';
+  jsonstr = '';
 
   constructor(private build: DynamicControlService, private service: Page3MetadataService ) { }
 
@@ -50,7 +51,7 @@ export class Page3Component implements OnInit {
   }
 
   onSubmit() {
-    const json = JSON.stringify(this.form.getRawValue());
+    this.jsonstr = JSON.stringify(this.form.getRawValue());
     const values = this.build.getFormValues();
   }
 

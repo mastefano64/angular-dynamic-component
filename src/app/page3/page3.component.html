@@ -11,5 +11,9 @@
     <div class="form-row">
       <button type="submit" [disabled]="!form.valid">Salva</button>
     </div>
+
+    <div class="mt-4">
+      <pre>{{ jsonstr | json }}</pre>
+    </div>
   </form>
 </div>
