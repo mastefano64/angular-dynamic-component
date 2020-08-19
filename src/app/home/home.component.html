@@ -1,4 +1,45 @@
-<h1>Home</h1>
-<div>
-  
+<div class="pl-4 pr-4">
+    <h1>Home</h1>
+    <div>
+        <div class="homeBox">
+            <div class="mt-0">
+                <img src="/assets/angular-logo.png">
+            </div>
+            <div class="mt-2">
+                Molte volte ci troviamo ad avere in una nostra applicazione dei form con una logica relativamente
+                semplice. Ovvero dei form che sono solo una raccolta di campi per
+                fornire funzionalità di data-entry, questo ci fa perdere del tempo perchè ogni volta dobbiamo codificare
+                il tutto dalla A alla Z. L'idea è perchè non creare un
+                form dinamico partendo da dei metadati. Poi se all'interno di una nostra applicazione abbiamo la
+                necessità di avere un form con una complessità maggiore, allora
+                lo creiamo alla vecchi maniera (dalla A alla Z).
+                <br><br>
+                La presente DEMO mostra come creare una cosa simile.
+                <br><br>
+                <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component">https://github.com/mastefano64/angular-dynamic-component</a>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <div>
+        Sono presenti 4 form: con o senza Bootstrap, ComboBox slegate o collegate (es. provincia / comune).
+        <br><br>
+        L'interfacci che stabilisce il contratto dei metadati che definiscono il form è la seguente
+        <br><br>
+        <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/model/response-metadata.ts">https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/model/response-metadata.ts</a>
+        <br><br>
+        Il servizio che fornisce i metatati per la Page1 è il seguente (ma il discorso vale per tutti gli altri)
+        <br><br>
+        <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/service/page1-metadata.service.ts">https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/service/page1-metadata.service.ts</a>
+        <br><br>
+    </div>
+    <div>
+        Tutto ruota attorno al servizio <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/service/dynamic-control.service.ts">"DynamicControlService"</a>,
+        questo servizio si occupa partendo dai metadati di creare un Reactive Forms con i campi desiderati. Nel servizio è presente una proprietà current di tipo <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/model/form-group-def.ts">"FromGroupDef"</a>
+        che contiene appunto il Reactive Forms creato attraverso il metodo "createFormControl". I template HTML usati per creare il Reactive Form sono i seguenti: 
+        <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/component/dynamic-form/dynamic-form1.component.html">container senza bootStrap</a>, 
+        <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/component/dynamic-form/dynamic-form2.component.html">container con bootStrap</a>, 
+        <a target="_black" href="https://github.com/mastefano64/angular-dynamic-component/blob/master/src/app/dynamic-component-module/component/dynamic-control/dynamic-control.component.html">controlli da renderizzare in base ai metadata</a>
+        <br><br>
+    </div>
 </div>
